@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Homepage</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            color: #333;
+        }
+
+        .container {
+            width: 100%;
+            /* overflow-x: hidden; */
+        }
+
+        #header {
+            background-color: #3E8C9F;
+            padding: 20px 50px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        #logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+
+        #nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        #nav a:hover {
+            color: #ddd;
+        }
+
+        /* #nav a:hover::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: white;
+            left: 0;
+            bottom: 0;
+        } */
+
+        #hero {
+            background-image: url('hero.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: 80px;
+            position: relative;
+            background-image: url(img2.jpeg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        #hero h1 {
+            font-size: 48px;
+            color: white;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        #products {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 50px 20px;
+        }
+
+        .product {
+            width: 20%;
+            margin: 20px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .product img {
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+        }
+
+        .product img {
+            width: 150px;
+            height: 100px;
+        }
+
+        .product h2 {
+            font-size: 18px;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .product p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        #footer {
+            background-color: #3E8C9F;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="header">
+            <div id="logo">E-commerce Website</div>
+            <div id="nav">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+        <div id="hero">
+            <h1>Welcome to our e-commerce website</h1>
+        </div>
+        <div id="products">
+            <div class="product">
+                <img src="product1.avif" alt="">
+                <h2>Mobile Phones</h2>
+                <p>Product description</p>
+            </div>
+            <div class="product">
+                <img src="product2.jpg" alt="">
+                <h2>T-Shirt</h2>
+                <p>Product description</p>
+            </div>
+            <div class="product">
+                <img src="product3.jpg" alt="">
+                <h2>Pants & Tousers</h2>
+                <p>Product description</p>
+            </div>
+            <div class="product">
+                <img src="product4.jpg" alt="">
+                <h2>Specs & Googles</h2>
+                <p>Product description</p>
+            </div>
+            <div class="product">
+                <img src="product5.jpg" alt="">
+                <h2>Girls Wearings</h2>
+                <p>Product description</p>
+            </div>
+            <div class="product">
+                <img src="product6.png" alt="">
+                <h2>Shoes</h2>
+                <p>Product description</p>
+            </div>
+            <div class="product">
+                <img src="product7.jpg" alt="">
+                <h2>Gym Wears</h2>
+                <p>Product description</p>
+            </div>
+            <div class="product">
+                <img src="product8.webp" alt="">
+                <h2>Watches</h2>
+                <p>Product description</p>
+            </div>
+        </div>
+        <div id="footer">
+             2024 E-commerce Website. All rights reserved.
+        </div>
+    </div>
+</body>
+
+</html>

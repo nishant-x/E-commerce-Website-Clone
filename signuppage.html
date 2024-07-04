@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url(back.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        #signupform {
+            background-color: rgba(71, 145, 163, 0.447);
+            border-radius: 10px;
+            box-shadow: 10px 10px 10px rgba(141, 192, 190, 0.432);
+            padding: 80px;
+            width: 25%;
+        }
+
+        #signupgif {
+            width: 40%;
+            height: 100%;
+        }
+
+        #gif {
+            height: 425px;
+            border-radius: 103px;
+        }
+
+        #usernameinput,
+        #passwordinput,
+        #confirmpasswordinput,
+        #mobileinput,
+        #emailinput {
+            width: 100%;
+            height: 25px;
+            border: 3px solid white;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        #signupbtn {
+            background-color: rgb(63, 120, 210);
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="signupgif">
+            <img id="gif" src="02.webp" alt="">
+        </div>
+        <div id="signupform">
+            <form method="post" id="form">
+                <input type="text" name="username" placeholder="Username" id="usernameinput" required>
+                <br><br>
+                <input type="password" name="password" placeholder="Create Password" id="passwordinput"
+                    oninput="passwordvalidation()" required>
+                <br><br>
+                <input type="password" name="confirmpassword" placeholder="Confirm Password" id="confirmpasswordinput"
+                    oninput="confirmpasswordvalidation()" required>
+                <br><br>
+                <input type="tel" name="mobile" placeholder="Mobile Number" id="mobileinput"
+                    oninput="Numbervalidation()" required>
+                <br><br>
+                <input type="email" name="email" placeholder="Email" id="emailinput" required>
+                <br><br>
+                <a href="loginpage.html">Back To Login</a>
+                <br><br>
+                <input type="submit" name="signup" value="Sign Up" id="signupbtn">
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+    const form = document.getElementById('form');
+    const usernameInput = document.getElementById('usernameinput');
+    const passwordInput = document.getElementById('passwordinput');
+    const confirmPasswordInput = document.getElementById('confirmpasswordinput');
+    const mobileInput = document.getElementById('mobileinput');
+
+    var checkavalidation = true;
+    function passwordvalidation() {
+        const passwordValidation =
+            /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+        if (!passwordValidation.test(passwordInput.value)) {
+            passwordInput.style.border = '4px solid red';
+            checkavalidation = false;
+        }
+        else {
+            passwordInput.style.border = '4px solid green';
+            checkavalidation = true;
+        }
+    }
+
+    function confirmpasswordvalidation() {
+
+        if (passwordInput.value !== confirmPasswordInput.value) {
+            confirmPasswordInput.style.border = '4px solid red';
+            checkavalidation = false;
+        }
+        else {
+            confirmPasswordInput.style.border = '4px solid green';
+            checkavalidation = true;
+        }
+    }
+
+    function Numbervalidation() {
+        const mobileValidation = /^[6-9]\d{9}$/;
+        if (!mobileValidation.test(mobileInput.value)) {
+            mobileInput.style.border = '4px solid red';
+            checkavalidation = false;
+        }
+        else {
+            mobileInput.style.border = '4px solid green';
+            checkavalidation = true;
+        }
+    }
+
+    form.addEventListener("submit", (e) => {
+        if (checkavalidation == true) {
+            alert("User Created Successfully");
+            window.location.href = "loginpage.html";
+        } else {
+            alert("Please fill all the fields");
+        }
+    });
+
+</script>
+
+</html>
